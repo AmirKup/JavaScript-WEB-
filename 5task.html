@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5 TASk</title>
+</head>
+<body>
+    <script>
+        var a = 5 + 8;
+        console.log("Result operation");
+        console.log(a);
+        
+        var str = "KAZHI MARAT";
+        console.log("FIO of stupid student - " + str);
+
+        let name = "TURAN";
+        let age2 = 18;
+        console.log("Student -", name,"\n" + "Age -", age2,  "years old");
+
+        let user1 = "Madiyar";
+        let age = 19;
+        let isMarried = true;
+        let text = `Name: ${user1} \n  Age: ${age} \n  IsMarried: ${isMarried}`;
+        console.log(text);  // Name: Tom   Age: 37   IsMarried: false
+        
+        const user = {name: "MARAT", age:24};
+        console.log(user.name , user.age);
+
+        let a2 = 45;  // тип number
+        let b = a2 + 5;
+        console.log(b); // 50
+            
+        a1 = "45"; // тип string
+        let c = a1 + 5
+        console.log(c); // 455
+
+
+        let id;
+        console.log(typeof id);       // undefined
+        id = 45;
+        console.log(typeof id);   // number
+        id = 45n;
+        console.log(typeof id);     // bigint 
+        id = "45";
+        console.log(typeof id);     // string
+
+
+
+        const a4 = 1;
+        const b2 = 2;
+        const result = a4 < b2 ? a4: b2;
+        console.log(result);
+
+        const c1 = 2;
+        const h = 1;
+        const result2 = c1 < h ? c1 + h : c1 - h;
+        console.log(result2);
+
+
+        let message = "Welcome to JavaScript";
+        let text2 = null;
+        text2 ??= message;
+        console.log(message);
+
+        let number1 = "56";
+        let number2 = 4;
+        let result3 = number1 + String(number2);
+        console.log(result3);
+        
+        let number4 = "56";
+        let number5 = 4;
+        let result4 = parseInt(number4) + number5;
+        console.log(result4);
+
+        let num1 = "666hello";
+        let num2 = parseInt(num1);
+        console.log(num2); // 123
+
+        let number7 = parseInt(0.0005);   // 0;
+        console.log(number7);
+        
+        let number6 = parseInt(0.0000005);  // 5
+        console.log(number6);
+
+        console.log(0.0000005); 
+
+        let num3 = "111";
+        let num4 = parseInt(num3, 2);
+        console.log(num4); // 6
+
+        let number10 = "46.07";
+        let number12 = "4.98";
+        let result6 = parseFloat(number10) + parseFloat(number12);
+        console.log(result6); //51.05
+    </script>
+</body>
+</html>
