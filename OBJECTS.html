@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBJECTS</title>
+</head>
+<body>
+    <script>
+        function amir(){
+        let user = {        
+            name: "Tom",
+            age: 26
+        };
+        console.log("Name: ", user.name);
+        console.log("Age: ", user.age);
+
+        let name = "Tom";
+        let age = 34;
+        let user1 = {name, age};
+        
+        let teacher = {user1, course: "JavaScript"};
+        console.log("Name and age: ", teacher.user1);      // {name: "Tom", age: 34}
+        console.log("Course: ", teacher.course);
+
+        console.log("")
+    }
+    amir();
+
+
+        function Amir(){
+        let user = {};
+        user.name = "Tom";
+        user.age = 26;
+        user.display = function(){
+            console.log(user.name);
+            console.log(user.age);
+        };
+        
+        // вызов метода
+        user.display();
+        }
+        Amir();
+
+        console.log("");
+
+        function Amir2(){
+        let user = {    
+            name: "Tom",
+            age: 26,
+            display: function(){
+                console.log(this.name);
+                console.log(this.age);
+            }
+        };
+    }
+    Amir2();
+
+    function amir3(){
+    let user = {
+    name: "Tom",
+    age: 26,
+    display(){
+        console.log(this.name, this.age);
+    },
+    move(place){
+        console.log(this.name, "goes to", place);
+    }
+    };
+    user.display(); // Tom 26
+    user.move("the shop");  // Tom goes to the shop
+}
+amir3();
+
+    console.log("")
+
+
+    function amir4(){
+    let user = {};
+    user["name"] = "Tom";
+    user["age"] = 26;
+    user["display"] = function(){
+        
+        console.log(user.name);
+        console.log(user.age);
+    };
+    
+    // вызов метода
+    user["display"]();
+}
+amir4();
+
+
+console.log("")
+
+    function amir5(){
+    let user = {
+    ["name"]: "Tom",
+    ["age"]: 26,
+    ["display"]: function(){
+      
+        console.log(user.name);
+        console.log(user.age);
+    }
+};
+user["display"]();  
+
+}
+amir5();
+
+console.log("")
+
+function amir6() {
+    let user = {
+    "name": "Tom22",
+    "age": 226,
+    "display": function(){
+     
+        console.log(user.name);
+        console.log(user.age);
+    }
+};
+// вызов метода
+user.display();
+}
+
+amir6();
+
+console.log("")
+
+
+        function Amir0() {
+                let user = {
+            name: "Tom",
+            age: 26,
+            "full name": "Tom Johns",
+            "display info": function(){
+                console.log(user.name);
+                console.log(user.age);
+            }
+        };
+        console.log(user["full name"]);
+        user["display info"]();
+        }
+        Amir0();
+
+        console.log("")
+
+        function amir7() {
+            const prop1  = "name";
+            const prop2  = "age";
+            let tom = { 
+                [prop1]: "Tom",
+                [prop2]: 37
+        };
+        console.log(tom);           // {name: "Tom", age: 37}
+        console.log(tom.name);      // Tom
+        console.log(tom.age);    // 37
+    }
+
+    amir7();
+
+    console.log("")
+
+    function amir8() {
+        function createObject(propName, propValue){
+    return {
+            [propName]: propValue,
+            print(){ 
+                console.log(`${propName}: ${propValue}`);
+            }
+    };
+}
+    let person = createObject("name", "Tom");
+    person.print();     // name: Tom
+    
+    let book = createObject("title", "JavaScript Reference");
+    book.print();   // title: JavaScript Reference
+    }
+    amir8();
+
+    console.log("")
+
+    function amir9() {
+        let user = {};
+            user.name = "Tom";
+            user.age = 26;
+            user.display = function(){
+                
+                console.log(user.name);
+                console.log(user.age);
+        };
+        
+        console.log(user.name); // Tom
+        delete user.name; // удаляем свойство
+        // альтернативный вариант
+        // delete user["name"];
+        user.name = "amir";
+        console.log(user.name); // undefined
+    }
+    amir9();
+
+    console.log("")
+
+    function amir10() {
+        const person = {name: "Tom", age: 37};
+        Object.freeze(person);
+        person.name= "Bob";
+        console.log(person.name); 
+    }
+    amir10();
+
+    console.log("")
+
+    function amir11() {
+        function getSalary(status){
+            if(status==="senior") return 1500;
+            else return 500;
+    }
+    status = "senior";
+    const name = "Tom";
+    const age = 37;
+    const person = { name: name, age: age, salary: getSalary()};
+    
+    console.log(person);    // {name: "Tom", age: 37, salary: 500}
+    }
+    amir11();
+
+    console.log("")
+
+    function amir12() {
+        function display(){ 
+            console.log(this.name, this.age);
+        }
+        const move = function(place){ console.log(this.name, "goes to", place)};
+        const name = "Tom";
+        const age = 37;
+        const salary = 500;
+        const person = { name, age, salary, display, move};
+        
+        person.display();       // Tom 37
+        person.move("cinema");  // Tom goes to cinema
+    }
+    amir12();
+</script>
+</body>
+</html>
