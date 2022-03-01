@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>strelo4nie_func</title>
+</head>
+<body>
+    <script>
+
+        let print = (message)=> console.log(message);
+ 
+        print("Hello, Amir");
+        print("Welcome to JavaScript");
+
+        let sum = (x, y)=> console.log("Sum =", x + y);       
+        sum(1, 2);      // Sum = 3
+        sum(4, 3);      // Sum = 7
+        sum(103, 2);    // Sum = 105
+
+        console.log("")
+
+        let sum2 = (x, y)=> x + y;
+        console.log("Sum =", sum2(1, 2));     // 3
+        console.log("Sum =", sum2(4, 3));     // 7
+        console.log("Sum =", sum2(102, 5));   // 105
+        
+        console.log("")
+
+        const hello = name => `Hello, ${name}`;
+        console.log(hello("Tom"));              // Hello, Tom
+        console.log(hello("Amir"));              // Hello, Bob
+        console.log(hello("Frodo Baggins"));    // Hello, Frodo Baggins
+
+        console.log("")
+
+        let user = (userName, userAge) => ({name: userName, age: userAge});
+        let tom = user("Tom", 34);
+        let bob = user("Bob", 25);
+        
+        console.log(tom.name, tom.age);     // "Tom", 34
+        console.log(bob.name, bob.age);     // "Bob", 25
+
+        console.log("")
+
+        const square = n => {
+            let result = n * n;
+            console.log(result);
+        }
+        square(5);     // 25
+        square(6);     // 36
+
+        console.log("")
+
+        function Amir(){
+            const square = n => {
+            let result = n * n;
+            return result;
+        }
+        
+        console.log(square(5));     // 25
+        }
+        Amir();
+ </script>
+</body>
+</html>
