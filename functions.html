@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUNCTIONS</title>
+</head>
+<body>
+    <script>
+        function goodMorning(){
+            console.log("Доброе утро");
+        }
+        function goodEvening(){
+            console.log("Добрый вечер");
+        }
+        let message = goodMorning;      // присваиваем переменной message функцию goodMorning
+        message();      // Доброе утро
+        message = goodEvening;          // меняем функцию в переменной message
+        message();      // Добрый вечер
+
+        let message2 = function(){
+            console.log("Hello JavaScript");
+        }
+        message2();
+    </script>
+</body>
+</html>
