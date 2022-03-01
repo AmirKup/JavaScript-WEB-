@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBLAST' VIDIMIG ZNA4</title>
+</head>
+<body>
+    <script>
+        var a = 5;
+        let b = 8;
+        const c = 9;
+        function displaySum(){
+            var d = a + b + c;
+            console.log(d);
+        }
+        displaySum(); // 22
+
+        console.log("")
+        
+        function print(){
+            var a = 5;
+            let b = 8;
+            const c = 9;
+            console.log("Function print: a =", a);
+            console.log("Function print: b =", b);
+            console.log("Function print: c =", c);
+    }
+    print();
+    console.log("Global: a =", a);  // Uncaught ReferenceError: a is not defined
+    
+    console.log ("")
+
+    // безымянный блок
+    
+    // {
+    //     var a = 5;
+    // }
+    // console.log("a =", a);  // a = 5
+    
+    // // условная конструкция
+    // if(true){
+    //     var b = 6;
+    // }
+    // console.log("b =", b);  // b = 6
+    
+    // // цикл
+    // for(var i = 0; i < 5; i++){
+    //     var c = 7;
+    // }
+    // console.log("c =", c);  // c = 7
+
+        {let a = 5;}
+        console.log("a =", a); // Uncaught ReferenceError: a is not defined
+
+        console.log("")
+       
+        {const b = 5;}
+        console.log("b =", b);  // Uncaught ReferenceError: b is not defined
+
+        console.log("")
+
+        var z = 89;
+        function print(){
+            var z = 10;
+            console.log(z); // 10
+        }
+        print(); // 10
+
+        console.log("")
+
+
+        function displayZ(){
+            var z = 20;
+            {
+                var z = 30; // Не определяет новую переменную, а изменяет значение переменной z уровня функции
+                console.log("Block:", z);
+            }
+            console.log("Function:", z);
+            }
+        displayZ();
+
+            console.log(' ')
+
+        let z1 = 10;
+        function displayZ(){
+            let z1 = 20;
+        {
+            let z1 = 30;
+            console.log("Block:", z1);
+        }
+            console.log("Function:", z1);
+        }
+        displayZ();
+        console.log("Global:", z1);
+
+        console.log(" ")
+
+        const z2 = 10;
+    function displayZ(){
+        const z2 = 20;
+        {
+        const z2 = 30;
+        console.log("Block:", z2); //30
+    }
+        console.log("Function:", z2); // 20
+    }
+    displayZ();
+    console.log("Global:", z2);// 10
+    
+    console.log("")
+
+    
+    function bar(){
+        foo = "25";
+    }
+    bar();
+    console.log(foo);
+
+    </script>
+</body>
+</html>
