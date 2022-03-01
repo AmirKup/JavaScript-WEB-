@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAMIKANIE IIFE</title>
+</head>
+<body>
+    <script>
+        function outer(){
+            let x = 5;
+            function inner(){
+                x++;
+                console.log(x);
+            };
+            return inner;
+        }
+        let fn = outer();   // fn = inner, так как функция outer возвращает функцию inner
+        // вызываем внутреннюю функцию inner
+        fn();   // 6
+        fn();   // 7
+        fn();   // 8
+
+        console.log("")
+
+        function multiply(n){
+            var x = n;
+            return function(m){ return x * m;};
+        }
+        var fn1 = multiply(5);
+        var result1 = fn1(6); // 30
+        console.log(result1); // 30
+        
+        var fn2= multiply(4);
+        var result2 = fn2(6); // 24
+        console.log(result2); // 24
+
+        console.log("")
+
+        function multiply(n){
+            var x = n;
+            return function(m){ return x * m;};
+        }
+        var result = multiply(5)(6); // 30
+        console.log(result);
+
+        console.log("")
+
+        (function(){
+        console.log("Привет мир");
+        }());
+        
+        (function (n){
+            
+            var result = 1;
+            for(var i=1; i<=n; i++)
+                result *=i;
+            console.log("Факториал числа " + n + " равен " + result);
+        }(4));
+    </script>
+</body>
+</html>
