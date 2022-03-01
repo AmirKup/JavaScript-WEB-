@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RES OF FUNC</title>
+</head>
+<body>
+    <script>
+        function sum (a, b) {
+        return a + b;
+        }
+        let num1 = sum(2, 4);
+        console.log(num1);  // 6
+        
+        const num2 = sum(6, 34);
+        console.log(num2);  // 40
+
+        console.log(" ")
+
+        function menu(n){  
+            if(n==1) return function(x, y){ return x + y;}
+            else if(n==2) return function(x, y){ return x - y;}
+            else if(n==3) return function(x, y){ return x * y;}
+            return function(){ return 0;}
+        }
+
+        const action = menu(3);         // выбираем первый пункт - сложение
+        const result = action(2, 5);    // выполняем функцию и получаем результат в константу result
+        console.log(result);
+
+        console.log (" ")
+
+
+        function menu(n){
+            if(n==1) return function(x, y){ return x + y;}
+            else if(n==2) return function(x, y){ return x - y;}
+            else if(n==3) return function(x, y){ return x * y;}
+            return function(){ return 0;};
+        }
+
+        let action1 = menu(1);
+        console.log(action1(2, 5));          // 7
+
+        action1 = menu(2);
+        console.log(action1(2, 5));          // -3
+
+        action1 = menu(3);
+        console.log(action1(2, 5));          // 10
+
+        action1 = menu(190);
+        console.log(action1(2, 5));          // 0
+    </script>
+</body>
+</html>
