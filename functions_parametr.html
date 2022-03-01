@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Settings</title>
+</head>
+<body>
+    <script>
+        function print(message){
+            console.log(message);
+        }
+        
+        print("Hello JavaScript");
+        print("Hello METANIT.COM");
+        print("Function in JavaScript");
+
+
+        function sum(a, b){
+            const result = a + b;
+            console.log(result)
+        }
+        
+        sum(2, 6)
+        sum(4, 5);          // 9
+        print(sum(109, 11));       // 120
+
+        function sum(x, y){
+            if(y === undefined) 
+                y = 5;
+            if(x === undefined) 
+                x = 8;
+            const z = x + y;
+            console.log(z);
+        }
+        sum();          // 13
+        sum(6);         // 11
+        sum(6, 4)       // 10
+
+        console.log(" ")
+
+        function sum(x = 8, y = 5){
+            const z = x + y;
+            console.log(z);
+        }
+        sum();      // 13
+        sum(6);     // 11
+        sum(6, 4)   // 10
+        
+        console.log(" ")
+
+
+        function sum(x = 8, y = 10 + x){
+            const z = x + y;
+            console.log(z);
+         }
+            sum();      // 26
+            sum(6);     // 22
+            sum(6, 4)   // 10
+
+        console.log(" ")
+
+        function sum(){
+            let result = 0;
+            for(const n of arguments)
+                result += n;
+            console.log(result);
+        }
+        sum(6);             // 6
+        sum(6, 4)           // 10
+        sum(6, 4, 5)        // 15
+
+        console.log(" ")
+
+            function display(season, ...temps){
+            console.log(season);
+            for(index in temps){
+                console.log(temps[index]);
+            }
+        }
+        display("Весна", -2, -3, 4, 2, 5);
+        display("Лето", 20, 23, 31, "asda", 123, 2, 3);
+
+        console.log("")
+
+        function sum(x, y){
+        return x + y;
+        }
+        
+        function subtract(x, y){
+            return x - y;
+        }
+        
+        function operation(x, y, func){
+        
+            const result = func(x, y);
+            console.log(result);
+        }
+        
+        console.log("Sum");
+        operation(10, 6, sum);  // 16
+        
+        console.log("Subtract");
+        operation(10, 6, subtract); // 4
+        </script>
+    
+</body>
+</html>
