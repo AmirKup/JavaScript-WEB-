@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekurs_func</title>
+</head>
+<body>
+    <script>
+        function getFactorial(n){
+    if (n === 1){
+        return 1;
+    }
+    else{
+        return n * getFactorial(n - 1);
+    }
+}
+var result = getFactorial(4); 
+console.log(result); // 24
+
+console.log("")
+
+function getFibonachi(n)
+{
+    if (n === 0){
+        return 0;
+    }
+    if (n === 1){
+        return 1;
+    }
+    else{
+        return getFibonachi(n - 1) + getFibonachi(n - 2);
+    }
+}
+var result = getFibonachi(8); //21 
+console.log(result); // 21
+    </script>
+</body>
+</html>
