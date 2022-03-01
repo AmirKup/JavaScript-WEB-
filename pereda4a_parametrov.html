@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function change(x){
+        x = 2 * x;
+        console.log("x in change:", x);
+    }
+    
+    var n = 10;
+    console.log("n before change:", n); // n before change: 10
+    change(n);                          // x in change: 20
+    console.log("n after change:", n);  // n after change: 10
+    
+/////////////////////////////////////
+
+    function change(user){
+        user.name = "Tom";
+    }
+    
+    var bob ={ 
+        name: "Bob"
+    };
+    console.log("before change:", bob.name);    // Bob
+    change(bob);
+    console.log("after change:", bob.name);     // Tom.\
+    
+    function change(array){
+    array[0] = 8;
+    }
+    function changeFull(array){
+        array = [9, 8, 7];
+    }
+    
+    var numbers = [1, 2, 3];
+    
+    console.log("before change:", numbers);     // [1, 2, 3]
+    change(numbers);
+    console.log("after change:", numbers);      // [8, 2, 3]
+    changeFull(numbers);
+    console.log("after changeFull:", numbers);  // [8, 2, 3]
+    </script>
+</body>
+</html>
